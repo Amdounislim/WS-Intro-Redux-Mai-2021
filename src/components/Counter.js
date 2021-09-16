@@ -5,6 +5,7 @@ import { increment, decrement, reset } from "../JS/actions/actionCounter"
 const Counter = (props) => {
     return (
         <div>
+            <h1>Counter</h1>
             <h3>{props.counter}</h3>
             <button onClick={props.increment}>+</button>
             <button onClick={props.decrement} >-</button>
@@ -15,7 +16,7 @@ const Counter = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        counter: state.count
+        counter: state.reducerCounter.count
     }
 }
 
@@ -27,10 +28,11 @@ const mapStateToProps = (state) => {
 
 // const mapDispatchToProps={
 //     increment,
-//     decrement
+//     decrement,
+//     reset
 // }
 
 
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Counter);
-export default connect(mapStateToProps, {increment, decrement, reset})(Counter);
+export default connect(mapStateToProps, { increment, decrement, reset })(Counter);
